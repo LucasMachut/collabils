@@ -57,6 +57,22 @@ class Video
      */
     private $slug;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="videos")
+     */
+    private $author;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="request")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $category;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Request::class, inversedBy="videos")
+     */
+    private $request;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -154,6 +170,42 @@ class Video
     public function setSlug(string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getAuthor(): ?User
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?User $author): self
+    {
+        $this->author = $author;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    public function getRequest(): ?Request
+    {
+        return $this->request;
+    }
+
+    public function setRequest(?Request $request): self
+    {
+        $this->request = $request;
 
         return $this;
     }
