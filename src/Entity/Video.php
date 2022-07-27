@@ -73,6 +73,11 @@ class Video
      */
     private $request;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $comment;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -206,6 +211,18 @@ class Video
     public function setRequest(?Request $request): self
     {
         $this->request = $request;
+
+        return $this;
+    }
+
+    public function getComment(): ?string
+    {
+        return $this->comment;
+    }
+
+    public function setComment(?string $comment): self
+    {
+        $this->comment = $comment;
 
         return $this;
     }
