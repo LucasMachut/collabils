@@ -4,6 +4,9 @@ body{
     background-size: cover;
     color: white;
 }
+a{
+    text-decoration: none;
+}
 .container-fluid{
     padding: 5% 5%;
     height: 80vh;
