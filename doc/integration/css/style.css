@@ -1,0 +1,131 @@
+body{
+    height: 100vh;
+    background: rgb(11,176,185);
+    background: linear-gradient(43deg, rgba(11,176,185,1) 0%, rgba(9,89,121,1) 25%, rgba(66,98,144,1) 56%, rgba(0,212,255,1) 100%) no-repeat;
+    background-size: cover;
+}
+.container-fluid{
+    padding: 5% 5%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+}
+.navbar{
+    background-color: rgba(182, 225, 241, 0.493);
+    color: white;
+    box-shadow: 8px 8px 33px 2px rgba(0, 0, 0, 0.678);
+    padding: 0 2%;
+}
+.main-buttons-item{
+    width: 20rem;
+    height: 15rem;
+    border-radius: 100%;
+    margin: auto;
+}
+.row{
+    display: flex;
+    align-items: center;
+}
+.btn-videos:hover{
+    background-color: rgb(106, 238, 255);
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align : center;
+    box-shadow: 5px 8px 26px -2px var(--green);
+}
+.btn-videos{
+    border: solid 2px;
+    border-color: white;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align : center;
+}
+.btn-request:hover{
+    background-color: rgb(106, 238, 255);
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 5px 8px 26px -2px var(--blue)
+}
+.btn-request{
+    border: solid 2px;
+    border-color: white;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align : center;
+}
+.btn-contribute:hover{
+    background-color: rgb(106, 238, 255);
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 5px 8px 26px -2px var(--blue)
+}
+.btn-contribute{
+    border: solid 2px;
+    border-color: white;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align : center;
+}
+/***** media query 3-main-buttons *******/
+@media (max-width: 1200px) {
+    .main-buttons-item{
+    width: 15rem;
+    height: 10rem;
+    border-radius: 100%;
+    }
+}
+@media (max-width: 990px) {
+    .row{
+    display: flex;
+    justify-content: center;
+    }
+    
+}
+@media (max-width: 570px) {
+    .row{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    }
+    .main-buttons-item{
+    display: inline-flex;
+    width: 15rem;
+    height: 10rem;
+    }
+    h3{
+        font-size: small;
+    }
+}
+@media (max-width: 380px) {
+    .row{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    }
+    .main-buttons-item{
+    display: inline-flex;
+    width: 11rem;
+    height: 6rem;
+    margin: 0.5rem;
+    }
+    h3{
+        font-size: small;
+    }
+}
