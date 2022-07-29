@@ -159,3 +159,22 @@ p.text {
     transform: translateY(-50%);
 
 }
+/********* media query footer *******/
+@media (max-width: 886px) {
+    footer ul{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (min-width: 770px) {
+    .footer-container{
+        margin: 0 10px;
+    }
+}
+@media (min-width: 533px) {
+    .footer-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
