@@ -261,3 +261,51 @@ p.text {
     text-align : center;
     box-shadow: 5px 8px 26px -2px rgb(106, 238, 255);
 }
+/***** media query 3-main-buttons *******/
+@media (max-width: 1200px) {
+    .main-search-buttons-item{
+    width: 15rem;
+    height: 10rem;
+    border-radius: 100%;
+    }
+}
+@media (max-width: 990px) {
+    .row{
+    display: flex;
+    justify-content: center;
+    }
+    
+}
+@media (max-width: 570px) {
+    .row{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    }
+    .main-buttons-item{
+    display: inline-flex;
+    width: 15rem;
+    height: 10rem;
+    }
+    h3{
+        font-size: small;
+    }
+}
+@media (max-width: 380px) {
+    .row{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    }
+    .main-search-buttons-item{
+    display: inline-flex;
+    width: 11rem;
+    height: 6rem;
+    margin: 0.5rem;
+    }
+    h3{
+        font-size: small;
+    }
+}
