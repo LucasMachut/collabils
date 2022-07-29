@@ -10,9 +10,10 @@ a{
 .container-fluid{
     padding: 5% 5%;
     height: 80vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;  
+    justify-content: center; 
 }
 .navbar{
     background-color: rgba(182, 225, 241, 0.493);
@@ -186,4 +187,77 @@ p.text {
         flex-direction: row;
         justify-content: space-around;
     }
+}
+
+/***********page intro recherche **********/
+.main-search-buttons-item{
+    width: 35rem;
+    height: 7rem;
+    margin: auto;
+}
+.btn-date-add:hover{
+    background: rgb(32, 188, 216);
+    border: solid 2px;
+    border-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align : center;
+    box-shadow: 5px 8px 26px -2px rgb(106, 238, 255);
+}
+.btn-date-add{
+    background: rgb(7, 66, 83);
+    color: white;
+    border: solid 2px;
+    border-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align : center;
+    box-shadow: 5px 8px 26px -2px rgb(106, 238, 255);
+}
+.btn-category-order:hover{
+    background: rgb(32, 188, 216);
+    border: solid 2px;
+    border-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align : center;
+    box-shadow: 5px 8px 26px -2px rgb(106, 238, 255);
+}
+.btn-category-order{
+    background: rgb(7, 66, 83);
+    color: white;
+    border: solid 2px;
+    border-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align : center;
+    box-shadow: 5px 8px 26px -2px rgb(106, 238, 255);
+}
+.btn-alphabet-order:hover{
+    background: rgb(32, 188, 216);
+    border: solid 2px;
+    border-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align : center;
+    box-shadow: 5px 8px 26px -2px rgb(106, 238, 255);
+}
+.btn-alphabet-order{
+    background: rgb(7, 66, 83);
+    color: white;
+    border: solid 2px;
+    border-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align : center;
+    box-shadow: 5px 8px 26px -2px rgb(106, 238, 255);
 }
