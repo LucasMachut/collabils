@@ -32,19 +32,21 @@ a{
     align-items: center;
 }
 .btn-videos:hover{
-    background: rgb(7, 66, 83);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align : center;
-    box-shadow: 8px 12px 40px -2px rgb(24, 67, 73);
-}
-.btn-videos{
     background: rgb(32, 188, 216);
     border: solid 2px;
     border-color: white;
     color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align : center;
+    box-shadow: 5px 8px 26px -2px rgb(106, 238, 255);
+}
+.btn-videos{
+    background: rgb(7, 66, 83);
+    color: white;
+    border: solid 2px;
+    border-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,15 +54,6 @@ a{
     box-shadow: 5px 8px 26px -2px rgb(106, 238, 255);
 }
 .btn-request:hover{
-    background: rgb(7, 66, 83);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    box-shadow: 8px 12px 40px -2px rgb(24, 67, 73);
-}
-.btn-request{
     background: rgb(32, 188, 216);
     border: solid 2px;
     border-color: white;
@@ -71,20 +64,33 @@ a{
     text-align : center;
     box-shadow: 5px 8px 26px -2px rgb(106, 238, 255);
 }
-.btn-contribute:hover{
+.btn-request{
     background: rgb(7, 66, 83);
     color: white;
+    border: solid 2px;
+    border-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
-    box-shadow: 8px 12px 40px -2px rgb(24, 67, 73);
+    text-align : center;
+    box-shadow: 5px 8px 26px -2px rgb(106, 238, 255);
 }
-.btn-contribute{
+.btn-contribute:hover{
     background: rgb(32, 188, 216);
     border: solid 2px;
     border-color: white;
     color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align : center;
+    box-shadow: 5px 8px 26px -2px rgb(106, 238, 255);
+}
+.btn-contribute{
+    background: rgb(7, 66, 83);
+    color: white;
+    border: solid 2px;
+    border-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
