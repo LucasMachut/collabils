@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class VideoController extends AbstractController
 {
     /**
-     * @Route("/video", name="app_video")
+     * @Route("/video/home", name="video_home")
      */
     public function index(): Response
     {

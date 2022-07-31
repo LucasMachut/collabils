@@ -24,6 +24,14 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block navbar %}{% include '/Front/partials/_nav_front.html.twig' %}{% endblock %}
+
+        {% block body %}
+
+
+
+        {% endblock %}
+        {% block footer %}{% include '/Front/partials/_footer_front.html.twig' %}{% endblock %}
+
     </body>
 </html>
