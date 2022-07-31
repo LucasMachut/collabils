@@ -1,7 +1,69 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MainController!{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
+{% endblock %}
+
+{% block title %}Bienvenu sur Collabils!{% endblock %}
 
 {% block body %}
+        <main>
+      <div class="container-fluid">
+        <!-- search form start -->
+        <div class="form-container d-flex flex-column align-items-center">
+          <h2>Rechercher une vidéo</h2>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder=""
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-light" type="submit">
+              Rechercher
+            </button>
+          </form>
+        </div>
+        <!-- search form end -->
 
+        <!-- main-buttons start -->
+        <div class="container-xxl py-5">
+          <div class="container-buttons">
+            <div class="row g-3 d-flex justify-content-around">
+              <div class="col-lg-4 col-sm-6">
+                <a href="#">
+                  <div class="main-buttons-item btn-videos">
+                    <div class="main-buttons-text">
+                      <i class="fa-solid fa-clapperboard"></i>
+                      <h3 class="mb-3">Vidéos</h3>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-sm-6">
+                <a href="#">
+                  <div class="main-buttons-item btn-request">
+                    <div class="main-buttons-text">
+                      <i class="fa-solid fa-circle-question"></i>
+                      <h3 class="mb-3">Requêtes</h3>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-lg-4 col-sm-6">
+                <a href="#">
+                  <div class="main-buttons-item btn-contribute">
+                    <div class="main-buttons-text">
+                      <i class="fa-solid fa-hand-holding-hand"></i>
+                      <h3 class="mb-3">Contribuer</h3>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- main-buttons end -->
+      </div>
+    </main>
 {% endblock %}
