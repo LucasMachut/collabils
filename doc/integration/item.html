@@ -113,9 +113,16 @@
                   Molestias, dolores.</span
                 >
               </div>
-              <div class="rate m-4">
-                <h3>Note</h3>
-                <span>7</span>
+              <div class="rate m-4 d-flex">
+                <div class="note">
+                  <h3>Note de pertinence moyenne :</h3>
+                  <span>7</span>
+                </div>
+                <div class="rate-seen">
+                  <h3>Taux de connaissance</h3>
+                  <span>7</span>
+                </div>
+                
               </div>
             </div>
           </div>
@@ -123,42 +130,75 @@
             <div class="video">
               <span>incrustation de la video</span>
             </div>
-            <div class="image">
-              <img src="" alt="" />
+            <div class="feedback">
+              <div class="seen">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="flexRadioDefault"
+                    id="flexRadioDefault1"
+                  />
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    J'ai déjà vu ce signe
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="flexRadioDefault"
+                    id="flexRadioDefault2"
+                    checked
+                  />
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    Je n'ai jamais vu ce signe
+                  </label>
+                </div>
+              </div>
+              <div class="range">
+                <label for="customRange1" class="form-label"
+                  >Pertinance de ce signe selon vous :</label
+                >
+                <input type="range" class="form-range" id="customRange1" />
+              </div>
             </div>
           </div>
         </div>
         <div class="comments">
-          <div class="comment-item m-1 p-3">
-            <span>Author - date</span><br />
-            <span
-              >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex
-              suscipit nostrum perspiciatis optio fuga et debitis esse illum
-              voluptates expedita rerum, deleniti itaque sunt sint? Officia,
-              animi rem repellat excepturi impedit mollitia quam adipisci alias,
-              nam ut totam dignissimos, vel sit vitae quia veritatis! Harum,
-              aliquid, esse quidem at quasi reprehenderit quas dolorem deserunt
-              et nulla quam consequuntur cum in. Commodi, voluptate nihil nisi
-              ex molestias est alias nobis doloremque nam unde, obcaecati
-              accusantium deserunt, dolorem exercitationem placeat dolorum
-              numquam.</span
-            >
-          </div>
-          <div class="comment-item m-1 p-3">
-            <span>Author - date</span><br />
-            <span
-              >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex
-              suscipit nostrum perspiciatis optio fuga et debitis esse illum
-              voluptates expedita rerum, deleniti itaque sunt sint? Officia,
-              animi rem repellat excepturi impedit mollitia quam adipisci alias,
-              nam ut totam dignissimos, vel sit vitae quia veritatis! Harum,
-              aliquid, esse quidem at quasi reprehenderit quas dolorem deserunt
-              et nulla quam consequuntur cum in. Commodi, voluptate nihil nisi
-              ex molestias est alias nobis doloremque nam unde, obcaecati
-              accusantium deserunt, dolorem exercitationem placeat dolorum
-              numquam.</span
-            >
-          </div>
+          <details>
+            <summary>Afficher les commmentaires</summary>
+            <div class="comment-item m-1 p-3">
+              <span>Author - date</span><br />
+              <span
+                >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex
+                suscipit nostrum perspiciatis optio fuga et debitis esse illum
+                voluptates expedita rerum, deleniti itaque sunt sint? Officia,
+                animi rem repellat excepturi impedit mollitia quam adipisci
+                alias, nam ut totam dignissimos, vel sit vitae quia veritatis!
+                Harum, aliquid, esse quidem at quasi reprehenderit quas dolorem
+                deserunt et nulla quam consequuntur cum in. Commodi, voluptate
+                nihil nisi ex molestias est alias nobis doloremque nam unde,
+                obcaecati accusantium deserunt, dolorem exercitationem placeat
+                dolorum numquam.</span
+              >
+            </div>
+            <div class="comment-item m-1 p-3">
+              <span>Author - date</span><br />
+              <span
+                >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex
+                suscipit nostrum perspiciatis optio fuga et debitis esse illum
+                voluptates expedita rerum, deleniti itaque sunt sint? Officia,
+                animi rem repellat excepturi impedit mollitia quam adipisci
+                alias, nam ut totam dignissimos, vel sit vitae quia veritatis!
+                Harum, aliquid, esse quidem at quasi reprehenderit quas dolorem
+                deserunt et nulla quam consequuntur cum in. Commodi, voluptate
+                nihil nisi ex molestias est alias nobis doloremque nam unde,
+                obcaecati accusantium deserunt, dolorem exercitationem placeat
+                dolorum numquam.</span
+              >
+            </div>
+          </details>
         </div>
         <form>
           <div class="mb-3">

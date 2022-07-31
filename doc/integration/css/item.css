@@ -35,18 +35,29 @@ h3{
     border: solid 1px rgb(0, 42, 105);
     padding: 1em;
 }
+.note{
+    width: 50%;
+}
 
 .video{
     width: 95%;
-    height:50%;
+    height: 40%;
     border: solid 1px rgb(0, 42, 105);
     margin: 1em;
 }
-.image{
+.feedback{
     width: 95%;
-    height: 45%;
     border: solid 1px rgb(0, 42, 105);
     margin: 1em;
+    padding: 1em;
+}
+.seen{
+    height: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
 }
 .comment-item{
     background-color: rgba(0, 0, 255, 0.062);
