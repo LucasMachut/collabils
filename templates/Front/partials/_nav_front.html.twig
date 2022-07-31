@@ -1,6 +1,8 @@
 {% block stylesheets %}
 <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
 {% endblock %}
+
+
 <header>
       <!-- Navbar start -->
       <nav class="navbar navbar-expand-lg">
@@ -37,7 +39,7 @@
             >
           </div>
           <a
-            href="login.html"
+            href={{ path('login') }}
             class="btn btn-outline-light rounded-pill px-3 d-none d-lg-block m-2"
             >Connexion<i class="fa fa-sign-in ms-3" aria-hidden="true"></i
           ></a>

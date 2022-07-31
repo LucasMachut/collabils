@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/login.css') }}"/>
+{% endblock %}
+
+{% block title %}Log in!{% endblock %}
+{% block navbar %}{% endblock %}
+
+{% block body %}
+<div id="main">
+        <div class="my-auto" id="info">
+            <h1 class="text-center my-5">Connexion</h1>
+            <form class="text-start" id="form-login">
+                <div class="mb-3">
+                    <label class="form-label" id="lbl-usuario" for="txt-usuario">* Adresse email</label>
+                    <input class="form-control" type="text" id="txt-usuario">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" id="lbl-password" for="txt-password">* Mot de passe</label>
+                    <input class="form-control" type="password" id="txt-password">
+                </div>
+                <div class="row">
+                    <div class="col-10 col-sm-10 col-md-8">
+                        <p class="text-start">* champs obligatoires</p>
+                    </div>
+                </div>
+                <div class="dropdown d-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center">
+                    <a href="#" class="animated-link login-link">
+                        <span type="submit" class="btn text-white" id="btn-connect"> Connexion</span>
+                    </a>
+                </div>
+            </form>
+            <div class="dropdown d-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center mt-5">
+                <a href="#" class="animated-link account-link">
+                    <span type="submit" class="btn text-white d-flex" id="btn-create-account"> Créer un compte</span>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block footer %}{% endblock %}
