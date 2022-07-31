@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Josefin+Sans:wght@300&family=Play&family=Rambla&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/item.css" />
+    <title>Collabils</title>
+  </head>
+  <body>
+    <header>
+      <!-- Navbar start -->
+      <nav class="navbar navbar-expand-lg">
+        <a href="index.html" class="navbar-brand text-light"> Collabils </a>
+        <!-- Hamburger Start -->
+
+        <div
+          type="button"
+          class="m-2"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <div class="menu-btn">
+            <div class="menu-btn__burger"></div>
+          </div>
+        </div>
+
+        <!-- <div class="m-2" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            </div> -->
+
+        <!-- Hamburger End -->
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav mx-auto">
+            <a href="about.html" class="nav-item nav-link text-light">Vidéos</a>
+            <a href="classes.html" class="nav-item nav-link text-light"
+              >Requêtes</a
+            >
+            <a href="contact.html" class="nav-item nav-link text-light"
+              >Favoris</a
+            >
+            <a href="contact.html" class="nav-item nav-link text-light"
+              >Forum</a
+            >
+          </div>
+          <a
+            href="login.html"
+            class="btn btn-outline-light rounded-pill px-3 d-none d-lg-block m-2"
+            >Connexion<i class="fa fa-sign-in ms-3" aria-hidden="true"></i
+          ></a>
+        </div>
+      </nav>
+      <!-- Navbar End -->
+    </header>
+
+    <main>
+      <div class="container-fluid">
+        <h1>Titre de la vidéo</h1>
+        <div class="container d-flex justify-content-center">
+          <div class="left">
+            <div class="data">
+              <div class="soucre m-4">
+                <h3>Source</h3>
+                <span
+                  >Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Placeat nobis eveniet numquam harum dicta quos? Quia optio qui
+                  voluptatibus vitae!</span
+                >
+              </div>
+              <div class="date m-4">
+                <h3>Date de récupération du signe</h3>
+                <span>10/05/2022</span>
+              </div>
+              <div class="definition m-4">
+                <h3>Définition</h3>
+                <span
+                  >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quidem odio repudiandae aut eos, fugit aspernatur laborum
+                  accusamus incidunt soluta sequi nisi. Reiciendis aspernatur
+                  aliquam iure tempora consequuntur sint quis alias velit
+                  inventore ab nesciunt fuga omnis labore rem laborum veniam
+                  commodi esse quisquam, debitis modi quae beatae provident eos.
+                  Iure?</span
+                >
+              </div>
+              <div class="context m-4">
+                <h3>Contexte d'utilisation</h3>
+                <span
+                  >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Consectetur nemo, assumenda dolore quas, eaque cumque adipisci
+                  a perferendis dolorem iste obcaecati mollitia, placeat
+                  sapiente quod sit? Enim consequatur minus repudiandae.</span
+                >
+              </div>
+              <div class="zone m-4">
+                <h3>Zone géographique d'utilisation du signe</h3>
+                <span
+                  >Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Molestias, dolores.</span
+                >
+              </div>
+              <div class="rate m-4 d-flex">
+                <div class="note">
+                  <h3>Note de pertinence moyenne :</h3>
+                  <span>7</span>
+                </div>
+                <div class="rate-seen">
+                  <h3>Taux de connaissance</h3>
+                  <span>7</span>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="video">
+              <span>incrustation de la video</span>
+            </div>
+            <div class="feedback">
+              <div class="seen">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="flexRadioDefault"
+                    id="flexRadioDefault1"
+                  />
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    J'ai déjà vu ce signe
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="flexRadioDefault"
+                    id="flexRadioDefault2"
+                    checked
+                  />
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    Je n'ai jamais vu ce signe
+                  </label>
+                </div>
+              </div>
+              <div class="range">
+                <label for="customRange1" class="form-label"
+                  >Pertinance de ce signe selon vous :</label
+                >
+                <input type="range" class="form-range" id="customRange1" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="comments">
+          <details>
+            <summary>Afficher les commmentaires</summary>
+            <div class="comment-item m-1 p-3">
+              <span>Author - date</span><br />
+              <span
+                >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex
+                suscipit nostrum perspiciatis optio fuga et debitis esse illum
+                voluptates expedita rerum, deleniti itaque sunt sint? Officia,
+                animi rem repellat excepturi impedit mollitia quam adipisci
+                alias, nam ut totam dignissimos, vel sit vitae quia veritatis!
+                Harum, aliquid, esse quidem at quasi reprehenderit quas dolorem
+                deserunt et nulla quam consequuntur cum in. Commodi, voluptate
+                nihil nisi ex molestias est alias nobis doloremque nam unde,
+                obcaecati accusantium deserunt, dolorem exercitationem placeat
+                dolorum numquam.</span
+              >
+            </div>
+            <div class="comment-item m-1 p-3">
+              <span>Author - date</span><br />
+              <span
+                >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex
+                suscipit nostrum perspiciatis optio fuga et debitis esse illum
+                voluptates expedita rerum, deleniti itaque sunt sint? Officia,
+                animi rem repellat excepturi impedit mollitia quam adipisci
+                alias, nam ut totam dignissimos, vel sit vitae quia veritatis!
+                Harum, aliquid, esse quidem at quasi reprehenderit quas dolorem
+                deserunt et nulla quam consequuntur cum in. Commodi, voluptate
+                nihil nisi ex molestias est alias nobis doloremque nam unde,
+                obcaecati accusantium deserunt, dolorem exercitationem placeat
+                dolorum numquam.</span
+              >
+            </div>
+          </details>
+        </div>
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Votre commentaire</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </main>
+
+    <footer class="text-center">
+      <div class="footer-container text-white py-4 py-lg-5">
+        <ul class="list-footer-links">
+          <li class="footer-link me-4">
+            <a class="link-light" href="contact.html">Contact</a>
+          </li>
+          <li class="footer-link me-4">
+            <a class="link-light" href="mentions.html">Mentions légales</a>
+          </li>
+          <li class="footer-link me-4">
+            <a class="link-light" href="aboutUs.html">Qui sommes nous ?</a>
+          </li>
+        </ul>
+      </div>
+      <div class="back-home-footer">
+        <p>Collabils</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

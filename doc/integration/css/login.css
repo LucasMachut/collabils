@@ -1,0 +1,113 @@
+#main {
+	height: 100vh;
+	background:linear-gradient(
+        rgba(0, 0, 0, 0.74), 
+        rgba(28, 28, 226, 0.6)
+      ), url("../../../assets/img/soap-bubble.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+h1 {
+    font-family: 'Audiowide', cursive;
+}
+
+label {
+    font-family: 'Rambla', sans-serif;
+	font-size: 1.5em;
+}
+#info {
+	width: 95%;
+	height: 530px;
+	border-radius: 5px;
+	color: var(--bs-white);
+	background-color: rgba(0, 0, 0, 0.35);
+	left: 50%;
+	top: 40%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	font-size: 12px;
+	border-radius: 22.2px;
+	box-shadow: 0 0 16px #5dc7ec;
+}
+#btn-connect{
+    font-family: 'Rambla', sans-serif;
+    background-color: rgba(137, 139, 238, 0.473);
+    width: 10rem;
+}
+
+
+@media (min-width: 576px) {
+	#info {
+		max-width: 350px;
+	}
+}
+
+#form-login {
+	max-width: 70%;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+#logo {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+#signup {
+	color: rgb(255, 255, 255);
+}
+
+/************** NE PAS COPIER *****************/
+.animated-link {
+	display: inline-block;
+	border-radius: 10px;
+	text-decoration: none;
+	margin-top: 25px;
+}
+
+.animated-link span {
+	display: inline-block;
+	color: #333;
+	border: 1px solid #333;
+	padding: 0.5rem 0.5rem;
+	font-size: 20px;
+	font-weight: 600;
+	border-radius: 10px;
+	cursor: pointer;
+	user-select: none;
+	transition:
+		transform .15s ease-out,
+		color .15s ease-out,
+		background-color .15s ease-out,
+}
+
+/************** NE PAS COPIER *****************/
+
+.login-link:hover span {
+	transform: translate(-6px, -6px);
+	background: #c238fe;
+}
+
+.login-link span {
+	background: #5dc7ec;
+	padding: 0.5rem 0.5rem;
+}
+
+.account-link span {
+	background: #02237e;
+	padding: 0.5rem 5.5rem;
+	box-shadow: 0 0 30px #5dc7ec;
+}
+
+.account-link:hover span {
+	transform: translate(-6px, -6px);
+	background: #5dc7ec;
+
+}
+.login-link,
+.account-link {
+	background-color: black;
+}
