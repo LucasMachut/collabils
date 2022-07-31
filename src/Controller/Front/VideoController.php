@@ -17,4 +17,13 @@ class VideoController extends AbstractController
             'controller_name' => 'VideoController',
         ]);
     }
+    /**
+     * @Route("/video/submit", name="video_submit")
+     */
+    public function submit(): Response
+    {
+        return $this->render('Front/video/submit.html.twig', [
+            'controller_name' => 'VideoController',
+        ]);
+    }
 }

@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/submit.css') }}"/>
+{% endblock %}
+
+{% block title %}Hello CategoryController!{% endblock %}
+
+{% block body %}
+<main>
+      <div class="container">
+        <!------form start------>
+        <h2>Soumettre une vidéo</h2>
+        <form>
+          <div class="mb-3">
+            <label for="videoTitle" class="form-label">Titre</label>
+            <input
+              type="text"
+              class="form-control"
+              id="videoTitle"
+              aria-describedby="emailHelp"
+            />
+            <div id="videoTitleHeld" class="form-text">
+              Donnez un titre à votre vidéo
+            </div>
+          </div>
+          <div class="mb-3">
+            <span>Catégorie</span>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Choisissez une catégorie</option>
+              <option value="1">Science</option>
+              <option value="2">Politique</option>
+              <option value="3">Psychologie</option>
+            </select>
+            <div id="videoTitleHeld" class="form-text">
+              Choisissez la catégorie de votre vidéo
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Source</label>
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+            />
+            <div id="videoTitleHeld" class="form-text">
+              Indiquez, si possible, d'où vient ce signe
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="videoTitle" class="form-label">Définition</label>
+            <input
+              type="text"
+              class="form-control"
+              id="videoTitle"
+              aria-describedby="emailHelp"
+            />
+            <div id="videoTitleHeld" class="form-text">
+              Expliquez le sens de ce signe
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="videoTitle" class="form-label"
+              >Contexte d'utilisation</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="videoTitle"
+              aria-describedby="emailHelp"
+            />
+            <div id="videoTitleHeld" class="form-text">
+              Indiquez dans quel contexte ce signe peut être utilisé
+            </div>
+          </div>
+          <div class="mb-3 form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              id="exampleCheck1"
+            />
+            <label class="form-check-label" for="exampleCheck1"
+              >Il s'agit d'un code créé</label
+            >
+          </div>
+          <button type="submit" class="btn btn-outline-light">Submit</button>
+        </form>
+        <!------form end------>
+      </div>
+    </main>
+{% endblock %}
