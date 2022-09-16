@@ -36,7 +36,6 @@ class VideoController extends AbstractController
         ->add('category', DateType::class, array(
             'constraints' => array(
                 new NotBlank(),
-                new Type(\DateTime::class),
             )
         ))
         ->getForm();
