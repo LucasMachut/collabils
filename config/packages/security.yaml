@@ -17,7 +17,7 @@ security:
         main:
             lazy: true
             provider: app_user_provider
-            custom_authenticator: App\Security\ObabyAuthenticator
+            custom_authenticator: App\Security\CollabilsAuthenticator
             logout:
                 path: security_logout
 

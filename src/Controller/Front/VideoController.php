@@ -5,6 +5,9 @@ namespace App\Controller\Front;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Constraint\NotBlank;
+use Symfony\Component\Validator\Constraint\Type;
+
 
 class VideoController extends AbstractController
 {
@@ -25,5 +28,17 @@ class VideoController extends AbstractController
         return $this->render('Front/video/submit.html.twig', [
             'controller_name' => 'VideoController',
         ]);
-    }
+
+        $form = $this->createFormBuilder()
+        ->add('title', TextType::class, array(
+            'constraints' => new NotBlank(),
+        ))
+        ->add('category', DateType::class, array(
+            'constraints' => array(
+                new NotBlank(),
+                new Type(\DateTime::class),
+            )
+        ))
+        ->getForm();
+            }
 }

@@ -1,0 +1,48 @@
+{{ form_start(form) }}
+{# {{ form_widget(form) }} #}
+
+
+	<div class="mb-3">
+		<div class="col-10 col-sm-10 col-md-10 offset-1 offset-sm-1">
+			<p class="text-center">
+				<strong>{{ form_row(form.firstname) }}</strong>
+			</p>
+		</div>
+		<div class="col-10 col-sm-10 col-md-10 offset-1 offset-sm-1">
+			<p class="text-center">
+				<strong>{{ form_row(form.lastname) }}</strong>
+			</p>
+		</div>
+		<div class="col-10 col-sm-10 col-md-10 offset-1 offset-sm-1">
+			<p class="text-center">
+				<strong>{{ form_row(form.email) }}</strong>
+			</p>
+		</div>
+		<div class="col-10 col-sm-10 col-md-10 offset-1 offset-sm-1">
+			<p class="text-center">
+				<strong>{{ form_row(form.password) }}</strong>
+			</p>
+		</div>
+		<div class="col-10 col-sm-10 col-md-10 offset-1 offset-sm-1">
+			<p class="text-center">
+				<strong>{{ form_row(form.job) }}</strong>
+			</p>
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="px-5">
+			<p class="text-start">* champs obligatoires</p>
+		</div>
+	</div>
+
+	<div class="btn-submit d-flex d-xxl-flex justify-content-center align-items-center justify-content-xxl-center">
+		<a href="{{ path('user_new') }}" class="animated-link login-link">
+			<button type="submit" class="btn btn-primary text-white">Enregistrer</button>
+		</a>
+	</div>
+
+
+
+{{ form_end(form) }}
