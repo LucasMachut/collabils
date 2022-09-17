@@ -5,8 +5,10 @@ namespace App\Controller\Front;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Validator\Constraint\NotBlank;
-use Symfony\Component\Validator\Constraint\Type;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Type;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 
 class VideoController extends AbstractController
@@ -25,10 +27,6 @@ class VideoController extends AbstractController
      */
     public function submit(): Response
     {
-        return $this->render('Front/video/submit.html.twig', [
-            'controller_name' => 'VideoController',
-        ]);
-
         $form = $this->createFormBuilder()
         ->add('title', TextType::class, array(
             'constraints' => new NotBlank(),
@@ -39,5 +37,9 @@ class VideoController extends AbstractController
             )
         ))
         ->getForm();
-            }
+        
+        return $this->render('Front/video/submit.html.twig', [
+            'controller_name' => 'VideoController',
+        ]);
+    }
 }
