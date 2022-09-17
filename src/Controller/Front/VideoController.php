@@ -31,6 +31,12 @@ class VideoController extends AbstractController
         ->add('title', TextType::class, array(
             'constraints' => new NotBlank(),
         ))
+        ->add('definition', TextType::class, array(
+            'constraints' => new NotBlank(),
+        ))
+        ->add('context', TextType::class, array(
+            'constraints' => new NotBlank(),
+        ))
         ->add('category', DateType::class, array(
             'constraints' => array(
                 new NotBlank(),
@@ -40,6 +46,7 @@ class VideoController extends AbstractController
         
         return $this->render('Front/video/submit.html.twig', [
             'controller_name' => 'VideoController',
+            'formSubmit' => $form->createView()
         ]);
     }
 }
