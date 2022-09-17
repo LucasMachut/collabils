@@ -28,16 +28,16 @@ class VideoController extends AbstractController
     public function submit(): Response
     {
         $form = $this->createFormBuilder()
-        ->add('title', TextType::class, array(
+        ->add('Titre', TextType::class, array(
             'constraints' => new NotBlank(),
         ))
-        ->add('definition', TextType::class, array(
+        ->add('Définition', TextType::class, array(
             'constraints' => new NotBlank(),
         ))
-        ->add('context', TextType::class, array(
+        ->add('Contexte d\'utilisation', TextType::class, array(
             'constraints' => new NotBlank(),
         ))
-        ->add('category', DateType::class, array(
+        ->add('Catégorie', DateType::class, array(
             'constraints' => array(
                 new NotBlank(),
             )
