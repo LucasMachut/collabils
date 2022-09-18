@@ -11,7 +11,12 @@
       <div class="container">
         <!------form start------>
         <h2>Soumettre une vidéo</h2>
-        {{form(formSubmit)}}
+        {{ form_start(formSubmit) }}
+          
+          {{ form_widget(formSubmit) }}
+          <button type="submit" class"btn btn-success">Enregistrer<button>
+
+        {{ form_start(formSubmit) }}
         <!------form end------>
       </div>
     </main>
