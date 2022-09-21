@@ -34,7 +34,7 @@ class UserController extends AbstractController
      * @Route ("/user/new", name="user_new", methods={"GET","POST"})
      * @param int $id
     */
-    public function new(Request $request, UserRepository $userRepository, UserPasswordHasherInterface $passwordHasher): Response
+    public function new(Request $request, UserRepository $userRepository, UserPasswordHasherInterface $passwordHasher, SluggerInterface $slug): Response
     {
         $user = new User();
         $form = $this->createForm(NewUserType::class, $user);

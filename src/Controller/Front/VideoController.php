@@ -45,14 +45,12 @@ class VideoController extends AbstractController
         ->add('Context', TextType::class, array(
             'constraints' => new NotBlank(),
         ))
-        ->add('Category', ChoiceType::class, [
-                'choices'  => [
-                    'Physique' => 'physics',
-                    'Psychologie' => 'psychology',
-                    'Informatique' => 'computer_science',
-                ],
-            ]   
-        )
+        ->add('Category', null, array(
+            'label' => "Catégorie",
+            'attr' => array(
+                'placeholder' => "Choisissez une catégorie",
+            )
+        ))
 
         ->getForm();
 

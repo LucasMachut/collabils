@@ -145,4 +145,9 @@ class Category
     {
         return $this->requests;
     }
+
+    public function __toString():string
+    {
+        return $this->name;
+    }
 }
