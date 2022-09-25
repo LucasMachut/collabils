@@ -8,8 +8,8 @@ use App\Entity\User;
 use App\Form\NewUserType;
 use App\Form\UserType;
 use App\Repository\UserRepository;
-use App\Services\SlugService;
 use Doctrine\ORM\Query\Expr\Func;
+use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -39,6 +39,8 @@ class UserController extends AbstractController
         $user = new User();
         $form = $this->createForm(NewUserType::class, $user);
         $form ->handleRequest($request);
+        $userSlug = $slug->slug($user->getFirstName())->lower();
+        $user->setSlug($userSlug);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->addFlash('success', 'Votre compte a été créé ! Vous pouvez dès à présent vous connecter.');

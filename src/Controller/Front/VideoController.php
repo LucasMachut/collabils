@@ -15,7 +15,7 @@ use Symfony\Component\Validator\Constraints\Type;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 class VideoController extends AbstractController
 {
@@ -31,7 +31,7 @@ class VideoController extends AbstractController
     /**
      * @Route("/video/submit", name="video_submit")
      */
-    public function submit (Request $request, ManagerRegistry $doctrine): Response
+    public function submit (Request $request, ManagerRegistry $doctrine, SluggerInterface $slugger): Response
     {
         $submitVideo = new Video();
 
@@ -60,6 +60,7 @@ class VideoController extends AbstractController
 
             // On va faire appel au Manager de Doctrine
             $entityManager = $doctrine->getManager();
+            $videoSlug = $slugger->slug($submitVideo->getTitle())->lower();
             $entityManager->persist($submitVideo);
             $entityManager->flush();
 
