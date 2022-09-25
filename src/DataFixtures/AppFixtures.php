@@ -35,7 +35,7 @@ class AppFixtures extends Fixture
     }
 
 
-    public function load(ObjectManager $manager, SlugService $slug):void
+    public function load(ObjectManager $manager):void
     {
         //Add truncate function to set id to 1
         $this->truncate();
