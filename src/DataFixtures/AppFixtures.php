@@ -5,23 +5,29 @@ namespace App\DataFixtures;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker;
+
 use App\Entity\Category;
-use App\Services\SlugService;
 use App\Entity\Request;
 use App\Entity\Video;
 use App\Entity\User;
+
+use App\Services\SlugService;
+use Symfony\Component\String\Slugger\SluggerInterface;
 use Doctrine\DBAL\Connection;
 
 class AppFixtures extends Fixture
 {
+    
     private $slug;
     private $slugService;
     private $connection;
-
-    public function __construct(SlugService $slug, Connection $connection) {
+    
+    public function __construct(SluggerInterface $slug, SlugService $slugService, Connection $connection) {
         $this->slug = $slug;
+        $this->slugService = $slugService;
         $this->connection = $connection;
     }
+    
 
     private function truncate()
     {
@@ -92,21 +98,21 @@ class AppFixtures extends Fixture
                 
         $category1 = new Category();
         $category1->setName('Physique');
-        $categorySlug1 = $this->slugService->slug($category1->getName())->lower();
+        $categorySlug1 = $this->slug->slug($category1->getName())->lower();
         $category1->setSlug($categorySlug1);
         $manager->persist($category1);
         $categoryList[] = $category1;
 
         $category2 = new Category();
         $category2->setName('Psychologie');
-        $categorySlug2 = $this->slugService->slug($category2->getName())->lower();
+        $categorySlug2 = $this->slug->slug($category2->getName())->lower();
         $category2->setSlug($categorySlug2);
         $manager->persist($category2);
         $categoryList[] = $category2;
 
         $category3 = new Category();
         $category3->setName('Justice');
-        $categorySlug3 = $this->slugService->slug($category3->getName())->lower();
+        $categorySlug3 = $this->slug->slug($category3->getName())->lower();
         $category3->setSlug($categorySlug3);
         $manager->persist($category3);
         $categoryList[] = $category3;
@@ -119,10 +125,11 @@ class AppFixtures extends Fixture
             $request->setDefinition($faker->sentence(true));
             $request->setContext($faker->sentence(true));
             $request->setCategory($categoryList[array_rand($categoryList)]);
-            $date=$faker->date('Y-m-d');
-            $request->setCreatedAt(new \DateTime($date));
-            $request->setStatus($faker->numberBetween(0, 1));
-            
+            $dateCreate=$faker->date('Y-m-d');
+            $request->setCreatedAt(new \DateTime($dateCreate));
+            $dateUpdate=$faker->date('Y-m-d');
+            $request->setCreatedAt(new \DateTime($dateUpdate));
+            $request->setStatus($faker->numberBetween(0,1));
             $manager->persist($request);
             $requestList[] = $request;
         }
@@ -135,8 +142,10 @@ class AppFixtures extends Fixture
             $video->setContext($faker->sentence(true));
             $video->setSlug($this->slugService->slug($video->getTitle()));
             $video->setCategory($categoryList[array_rand($categoryList)]);
-            $videoDate = $faker->date('Y-m-d');
-            $video->setUpdatedAt(new \DateTime($videoDate));
+            $videoDateUpload = $faker->date('Y-m-d');
+            $video->setUploadedAd(new \DateTime($videoDateUpload));
+            $videoDateUpdate = $faker->date('Y-m-d');
+            $video->setUpdatedAt(new \DateTime($videoDateUpdate));
             $video->setStatus($faker->numberBetween(0, 1));
             $video->setAuthor($userList[array_rand($userList)]);
 
