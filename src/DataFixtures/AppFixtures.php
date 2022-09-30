@@ -21,7 +21,6 @@ class AppFixtures extends Fixture
     private $slug;
     private $slugService;
     private $connection;
-    
     public function __construct(SluggerInterface $slug, SlugService $slugService, Connection $connection) {
         $this->slug = $slug;
         $this->slugService = $slugService;
@@ -102,6 +101,10 @@ class AppFixtures extends Fixture
         $category1->setSlug($categorySlug1);
         $manager->persist($category1);
         $categoryList[] = $category1;
+        $Category1DateCreate=$faker->date('Y-m-d');
+        $category1->setCreatedAt(new \DateTime($Category1DateCreate));
+        $Category1DateUpdate=$faker->date('Y-m-d');
+        $category1->setCreatedAt(new \DateTime($Category1DateUpdate));
 
         $category2 = new Category();
         $category2->setName('Psychologie');
@@ -109,6 +112,11 @@ class AppFixtures extends Fixture
         $category2->setSlug($categorySlug2);
         $manager->persist($category2);
         $categoryList[] = $category2;
+        $Category2DateCreate=$faker->date('Y-m-d');
+        $category2->setCreatedAt(new \DateTime($Category2DateCreate));
+        $Category2DateUpdate=$faker->date('Y-m-d');
+        $category2->setCreatedAt(new \DateTime($Category2DateUpdate));
+
 
         $category3 = new Category();
         $category3->setName('Justice');
@@ -116,6 +124,11 @@ class AppFixtures extends Fixture
         $category3->setSlug($categorySlug3);
         $manager->persist($category3);
         $categoryList[] = $category3;
+        $Category3DateCreate=$faker->date('Y-m-d');
+        $category3->setCreatedAt(new \DateTime($Category3DateCreate));
+        $Category3DateUpdate=$faker->date('Y-m-d');
+        $category3->setCreatedAt(new \DateTime($Category3DateUpdate));
+
 
 
         //* REQUEST CREATION
