@@ -3,6 +3,7 @@
 namespace App\Controller\Front;
 
 use App\Entity\Video;
+use App\Repository\VideoRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,49 +30,31 @@ class VideoController extends AbstractController
         ]);
     }
     /**
-     * @Route("/video/submit", name="video_submit")
+     * soumettre une nouvelle videoOh sympa 
+     * @Route("/video/submit", name="video_submit", methods={"GET", "POST"})
      */
-    public function submit (Request $request, ManagerRegistry $doctrine, SluggerInterface $slugger): Response
+    public function submit (Request $request, VideoRepository $videoRepository, SluggerInterface $slugger): Response
     {
-        $submitVideo = new Video();
-
-        $form = $this->createFormBuilder($submitVideo)
-        ->add('Title', TextType::class, array(
-            'constraints' => new NotBlank(),
-        ))
-        ->add('Definition', TextType::class, array(
-            'constraints' => new NotBlank(),
-        ))
-        ->add('Context', TextType::class, array(
-            'constraints' => new NotBlank(),
-        ))
-        ->add('Category', null, array(
-            'label' => "Catégorie",
-            'attr' => array(
-                'placeholder' => "Choisissez une catégorie",
-            )
-        ))
-
-        ->getForm();
-
-        $form->handleRequest($request);
+        $videoSubmit = new Video();
+        $form = $this->createForm(SubmitType::class, $videoSubmit);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $this->addFlash(
+                'success', 'Votre bonne pratique a bien été enregistrée. Elle est en attente de modération.'
+            );
+            $videoSubmit->setSlug($slugger->slug($videoSubmit->getTitle()));
+            $videoRepository->add($videoSubmit, true);
 
-            // On va faire appel au Manager de Doctrine
-            $entityManager = $doctrine->getManager();
-            $videoSlug = $slugger->slug($submitVideo->getTitle())->lower();
-            $entityManager->persist($submitVideo);
-            $entityManager->flush();
-
-            // On redirige vers la liste
-            return $this->redirectToRoute('video_home');
+            return $this->redirectToRoute(
+                'category',
+                [],
+                Response::HTTP_SEE_OTHER
+            );
         }
 
-        
         return $this->render('Front/video/submit.html.twig', [
-            'controller_name' => 'VideoController',
-            'formSubmit' => $form->createView()
+            "videoSubmit" => $videoSubmit,
+            "form" => $form, 
         ]);
     }
 }
