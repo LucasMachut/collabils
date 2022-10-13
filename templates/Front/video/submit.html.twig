@@ -4,19 +4,19 @@
 <link rel="stylesheet" href="{{ asset('css/submit.css') }}"/>
 {% endblock %}
 
-{% block title %}Soumettre uen vidéo {% endblock %}
+{% block title %}Soumettre une vidéo {% endblock %}
 
 {% block body %}
 <main>
       <div class="container">
         <!------form start------>
         <h2>Soumettre une vidéo</h2>
-        {{ form_start(formSubmit) }}
+        {{ form_start(videoSubmit) }}
           
-          {{ form_widget(formSubmit) }}
+          {{ form_widget(videoSubmit) }}
           <button type="submit" class"btn btn-success">Enregistrer<button>
 
-        {{ form_start(formSubmit) }}
+        {{ form_end(videoSubmit) }}
         <!------form end------>
       </div>
     </main>

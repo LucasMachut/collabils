@@ -5,20 +5,19 @@ namespace App\Controller\Front;
 use App\Entity\Video;
 use App\Entity\Category;
 use App\Repository\VideoRepository;
+use App\Repository\CategoryRepository;
 use App\Services\SlugService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Persistence\ManagerRegistry;
-
+use App\Form\VideoSubmitType;
 
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Type;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Symfony\Component\Form\Extension\Core\Type\VideoSubmitType;
-use Symfony\Component\String\Slugger\SluggerInterface;
 
 class VideoController extends AbstractController
 {
@@ -32,18 +31,17 @@ class VideoController extends AbstractController
         ]);
     }
     /**
-     * soumettre une nouvelle videoOh sympa
+     * soumettre une nouvelle video
      * @Route("/video/submit", name="video_submit", methods={"GET", "POST"})
      *
      **/
     public function submit(Request $request, VideoRepository $videoRepository, SlugService $slugService): Response
     {
         $videoSubmit = new Video();
-        $form = $this->createForm(VideoSubmitType::class, $videoSubmit);
+        $formVideoSubmit = $this->createForm(VideoSubmitType::class, $videoSubmit);
+        $formVideoSubmit->handleRequest($request);
 
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($formVideoSubmit->isSubmitted() && $formVideoSubmit->isValid()) {
             $this->addFlash(
                 'success', 'Votre bonne pratique a bien été enregistrée. Elle est en attente de modération.'
             );
@@ -52,16 +50,17 @@ class VideoController extends AbstractController
             $videoRepository->add($videoSubmit, true);
 
             return $this->redirectToRoute(
-                'category_show_practice',
+                'home',
                 [],
                 Response::HTTP_SEE_OTHER
             );
         }
 
         return $this->renderForm('Front/video/submit.html.twig', [
+            'formVideoSubmit' => $formVideoSubmit,
             'videoSubmit' => $videoSubmit,
-            'form' => $form,
         ]);
+
     }
 
 
