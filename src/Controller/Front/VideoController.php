@@ -62,43 +62,4 @@ class VideoController extends AbstractController
         ]);
 
     }
-
-
-        /**
-     * @Route("/video/submit", name="video_submit", methods={"GET", "POST"})
-     *
-     * @return Response
-
-    public function submit (
-        Video $video,
-        Request $request,
-        ManagerRegistry $doctrine,
-        SluggerInterface $slugger
-    ): Response
-    {
-        // Grphp bin/console debug:router
-        $form = $this->createForm(ReviewType::class, $video);
-
-        //récupération de la réponse
-        $form->handleRequest($request);
-
-        // Si le formulaire a été soumis et que les données sont valides...
-        if($form->isSubmitted() && $form->isValid()) {
-            $video->setSlug($slugger->slug($video->getTitle()));
-            $em = $doctrine->getManager();
-            $em->persist($video);
-            $em->flush();
-
-            // redirection vers la page movieShow
-            return $this->redirectToRoute('category');
-        }
-
-        //? utilisation de renderForm à la place render()
-        //https://symfony.com/doc/5.4/forms.html#rendering-forms
-        return $this->renderForm('Front/video/submit.html.twig', [
-            "video" => $video,
-            "form" => $form,
-        ]);
-    }
-**/
 }

@@ -23,12 +23,12 @@ class Video
     private $title;
 
     /**
-     * @ORM\Column(type="smallint")
+     * @ORM\Column(type="smallint", nullable=true)
      */
     private $status;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="date", nullable=true)
      */
     private $uploadedAd;
 
@@ -53,7 +53,7 @@ class Video
     private $rate;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $slug;
 
