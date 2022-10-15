@@ -49,10 +49,16 @@ class Category
      */
     private $requests;
 
+    /**
+     * @ORM\OneToMany(targetEntity=RequestSign::class, mappedBy="category")
+     */
+    private $requestSigns;
+
     public function __construct()
     {
         $this->request = new ArrayCollection();
         $this->requests = new ArrayCollection();
+        $this->requestSigns = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -149,5 +155,35 @@ class Category
     public function __toString():string
     {
         return $this->name;
+    }
+
+    /**
+     * @return Collection<int, RequestSign>
+     */
+    public function getRequestSigns(): Collection
+    {
+        return $this->requestSigns;
+    }
+
+    public function addRequestSign(RequestSign $requestSign): self
+    {
+        if (!$this->requestSigns->contains($requestSign)) {
+            $this->requestSigns[] = $requestSign;
+            $requestSign->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRequestSign(RequestSign $requestSign): self
+    {
+        if ($this->requestSigns->removeElement($requestSign)) {
+            // set the owning side to null (unless already changed)
+            if ($requestSign->getCategory() === $this) {
+                $requestSign->setCategory(null);
+            }
+        }
+
+        return $this;
     }
 }

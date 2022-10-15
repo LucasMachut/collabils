@@ -78,6 +78,11 @@ class Video
      */
     private $comment;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=RequestSign::class, inversedBy="video")
+     */
+    private $requestSign;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -230,5 +235,17 @@ class Video
     public function __toString(): string
     {
         return $this->category;
+    }
+
+    public function getRequestSign(): ?RequestSign
+    {
+        return $this->requestSign;
+    }
+
+    public function setRequestSign(?RequestSign $requestSign): self
+    {
+        $this->requestSign = $requestSign;
+
+        return $this;
     }
 }
