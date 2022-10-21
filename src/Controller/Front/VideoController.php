@@ -60,6 +60,17 @@ class VideoController extends AbstractController
             'formVideoSubmit' => $formVideoSubmit,
             'videoSubmit' => $videoSubmit,
         ]);
+    }
 
+    /**
+     * @Route("/video/chrono", name="video_list_chrono")
+     */
+    public function list(VideoRepository $videoRepository): Response
+    {
+        $videos = $videoRepository->findAll();
+
+        return $this->render('Front/video/videoChrono.html.twig', [
+            'videos' => $videos,
+        ]);
     }
 }
