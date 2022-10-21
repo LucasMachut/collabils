@@ -2,8 +2,6 @@
 
 namespace App\Controller\Front;
 
-namespace App\Controller\Front;
-
 use App\Entity\User;
 use App\Form\NewUserType;
 use App\Form\UserType;

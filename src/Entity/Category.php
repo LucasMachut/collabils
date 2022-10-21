@@ -45,11 +45,6 @@ class Category
     private $video;
 
     /**
-     * @ORM\OneToMany(targetEntity=Request::class, mappedBy="category")
-     */
-    private $requests;
-
-    /**
      * @ORM\OneToMany(targetEntity=RequestSign::class, mappedBy="category")
      */
     private $requestSigns;
@@ -65,7 +60,7 @@ class Category
     {
         return $this->id;
     }
-
+/**TODO supprimer request */
     public function getName(): ?string
     {
         return $this->name;
@@ -114,43 +109,6 @@ class Category
         return $this;
     }
 
-    /**
-     * @return Collection<int, Video>
-     */
-    public function getRequest(): Collection
-    {
-        return $this->request;
-    }
-
-    public function addRequest(Video $request): self
-    {
-        if (!$this->request->contains($request)) {
-            $this->request[] = $request;
-            $request->setCategory($this);
-        }
-
-        return $this;
-    }
-
-    public function removeRequest(Video $request): self
-    {
-        if ($this->request->removeElement($request)) {
-            // set the owning side to null (unless already changed)
-            if ($request->getCategory() === $this) {
-                $request->setCategory(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Request>
-     */
-    public function getRequests(): Collection
-    {
-        return $this->requests;
-    }
 
     public function __toString():string
     {

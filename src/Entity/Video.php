@@ -63,15 +63,10 @@ class Video
     private $author;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="request")
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="requestSign")
      * @ORM\JoinColumn(nullable=false)
      */
     private $category;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Request::class, inversedBy="videos")
-     */
-    private $request;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -208,17 +203,6 @@ class Video
         return $this;
     }
 
-    public function getRequest(): ?Request
-    {
-        return $this->request;
-    }
-
-    public function setRequest(?Request $request): self
-    {
-        $this->request = $request;
-
-        return $this;
-    }
 
     public function getComment(): ?string
     {

@@ -18,12 +18,14 @@ use Symfony\Component\Routing\Annotation\Route;
 class RequestController extends AbstractController
 {
     /**
-     * @Route("/request", name="app_request")
+     * @Route("/request/list", name="request_list")
      */
-    public function index(): Response
+    public function list(RequestSignRepository $requestSignRepository): Response
     {
-        return $this->render('Front/request/index.html.twig', [
-            'controller_name' => 'RequestController',
+        $requestedSigns = $requestSignRepository->findAll();
+
+        return $this->render('Front/request/requestList.html.twig', [
+            'requestedSigns' => $requestedSigns,
         ]);
     }
 
@@ -35,7 +37,7 @@ class RequestController extends AbstractController
     public function submit(Request $request, RequestSignRepository $requestSignRepository, SlugService $slugService): Response
     {
         $requestSignSubmit = new RequestSign();
-        $formRequestSignSubmit = $this->createForm(VideoSubmitType::class, $requestSignSubmit);
+        $formRequestSignSubmit = $this->createForm(RequestSubmitType::class, $requestSignSubmit);
         $formRequestSignSubmit->handleRequest($request);
 
         if ($formRequestSignSubmit->isSubmitted() && $formRequestSignSubmit->isValid()) {

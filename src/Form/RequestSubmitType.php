@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\Request;
+use App\Entity\RequestSign;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -40,7 +40,7 @@ class RequestSubmitType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Request::class,
+            'data_class' => RequestSign::class,
         ]);
     }
 }

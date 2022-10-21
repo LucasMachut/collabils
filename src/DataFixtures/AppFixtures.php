@@ -7,7 +7,7 @@ use Doctrine\Persistence\ObjectManager;
 use Faker;
 
 use App\Entity\Category;
-use App\Entity\Request;
+use App\Entity\RequestSign;
 use App\Entity\Video;
 use App\Entity\User;
 
@@ -133,18 +133,21 @@ class AppFixtures extends Fixture
 
         //* REQUEST CREATION
         for ($j = 0; $j < 30; $j++) {
-            $request = new Request();
-            $request->setTitle($faker->sentence(true));
-            $request->setDefinition($faker->sentence(true));
-            $request->setContext($faker->sentence(true));
-            $request->setCategory($categoryList[array_rand($categoryList)]);
+            $requestSign = new RequestSign();
+            $requestSign->setTitle($faker->sentence(true));
+            $requestSign->setDefinition($faker->sentence(true));
+            $requestSign->setContext($faker->sentence(true));
+            $requestSign->setCategory($categoryList[array_rand($categoryList)]);
             $dateCreate=$faker->date('Y-m-d');
-            $request->setCreatedAt(new \DateTime($dateCreate));
+            $requestSign->setCreatedAt(new \DateTime($dateCreate));
             $dateUpdate=$faker->date('Y-m-d');
-            $request->setCreatedAt(new \DateTime($dateUpdate));
-            $request->setStatus($faker->numberBetween(0,1));
-            $manager->persist($request);
-            $requestList[] = $request;
+            $requestSign->setCreatedAt(new \DateTime($dateUpdate));
+            $requestSign->setStatus($faker->numberBetween(0,1));
+            $requestSign->setAuthor($userList[array_rand($userList)]);
+
+
+            $manager->persist($requestSign);
+            $requestList[] = $requestSign;
         }
 
         //* VIDEO CREATION

@@ -73,9 +73,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $videos;
 
+    /**
+     * @ORM\OneToMany(targetEntity=RequestSign::class, mappedBy="author")
+     */
+    private $requestSigns;
+
     public function __construct()
     {
         $this->videos = new ArrayCollection();
+        $this->requestSigns = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -271,6 +277,36 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function __toString()
     {
         return $this->lastName;
+    }
+
+    /**
+     * @return Collection<int, RequestSign>
+     */
+    public function getRequestSigns(): Collection
+    {
+        return $this->requestSigns;
+    }
+
+    public function addRequestSign(RequestSign $requestSign): self
+    {
+        if (!$this->requestSigns->contains($requestSign)) {
+            $this->requestSigns[] = $requestSign;
+            $requestSign->setAuthor($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRequestSign(RequestSign $requestSign): self
+    {
+        if ($this->requestSigns->removeElement($requestSign)) {
+            // set the owning side to null (unless already changed)
+            if ($requestSign->getAuthor() === $this) {
+                $requestSign->setAuthor(null);
+            }
+        }
+
+        return $this;
     }
 
 }

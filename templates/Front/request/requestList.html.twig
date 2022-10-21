@@ -1,70 +1,39 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-<link rel="stylesheet" href="{{ asset('css/request.css') }}"/>
+<link rel="stylesheet" href="{{ asset('css/request-list.css') }}"/>
 {% endblock %}
 
 {% block title %}Voici la liste des requêtes ouvertes{% endblock %}
 
 {% block body %}
-        <main>
-      <div class="container-fluid">
-        <!-- search form start -->
-        <div class="form-container d-flex flex-column align-items-center">
-          <h2>Rechercher une vidéo</h2>
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder=""
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-light" type="submit">
-              Rechercher
-            </button>
-          </form>
-        </div>
-        <!-- search form end -->
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
 
-        <!-- main-buttons start -->
-        <div class="container-xxl py-5">
-          <div class="container-buttons">
-            <div class="row g-3 d-flex justify-content-around">
-              <div class="col-lg-4 col-sm-6">
-                <a href="#">
-                  <div class="main-buttons-item btn-videos">
-                    <div class="main-buttons-text">
-                      <i class="fa-solid fa-clapperboard"></i>
-                      <h3 class="mb-3">Vidéos</h3>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="col-lg-4 col-sm-6">
-                <a href="#">
-                  <div class="main-buttons-item btn-request">
-                    <div class="main-buttons-text">
-                      <i class="fa-solid fa-circle-question"></i>
-                      <h3 class="mb-3">Requêtes</h3>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="col-lg-4 col-sm-6">
-                <a href="#">
-                  <div class="main-buttons-item btn-contribute">
-                    <div class="main-buttons-text">
-                      <i class="fa-solid fa-hand-holding-hand"></i>
-                      <h3 class="mb-3">Contribuer</h3>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- main-buttons end -->
-      </div>
-    </main>
+	<h1 class="text-center">Liste des bonnes requêtes ouvertes</h1>
 
+	<section class="row display-lg">
+		<div class="col-lg-10 mb-5 m-auto">
+			<div class="table-back display-lg">
+				<table class="table table-hover">
+					<thead class="table-thead">
+						<tr>
+							<th scope="col" class="text-white">Titre</th>
+							<th scope="col" class="text-white">Catégorie</th>
+							<th scope="col" class="text-white">Date</th>
+							<th scope="col" class="text-white">Demandé par :</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for requestedSign in requestedSigns %}
+							<tr>
+								<td>{{ requestedSign.title }}</td>
+								<td>{{ requestedSign.category }}</td>
+                                <td>{{ requestedSign.createdAt ? requestedSign.createdAt|date('d-m-Y') : '' }}</td>
+								<td>{{ requestedSign.author }}</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</section>
 {% endblock %}
