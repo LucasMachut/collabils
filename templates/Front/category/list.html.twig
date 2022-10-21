@@ -15,91 +15,23 @@
             <div class="container-xxl py-5">
                 <div class="container-card">
                   <div class="row g-5 d-flex justify-content-around">
+              {% for category in categories %}
+
                     <div class="col-lg-4 col-sm-6 d-flex justify-content-center">
                       <a href="#" class="category-link">
                         <div class="">
                           <div class="text-center">
-                            <h3 class="mb-3">Physique</h3>
+                            <h3 class="mb-3">{{ category.name }}</h3>
                           </div>
                         </div>
                       </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 d-flex justify-content-center">
-                      <a href="#" class="category-link">
-                        <div class="">
-                          <div class="text-center">
-                            <h3 class="mb-3">Chimie</h3>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 d-flex justify-content-center">
-                      <a href="#" class="category-link">
-                        <div class="">
-                          <div class="text-center">
-                            <h3 class="mb-3">Politique</h3>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 d-flex justify-content-center">
-                      <a href="#" class="category-link">
-                        <div class="">
-                          <div class="text-center">
-                            <h3 class="mb-3">Psychologie</h3>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 d-flex justify-content-center">
-                      <a href="#" class="category-link">
-                        <div class="">
-                          <div class="text-center">
-                            <h3 class="mb-3">Pays</h3>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 d-flex justify-content-center">
-                      <a href="#" class="category-link">
-                        <div class="">
-                          <div class="text-center">
-                            <h3 class="mb-3">Villes</h3>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 d-flex justify-content-center">
-                      <a href="#" class="category-link">
-                        <div class="">
-                          <div class="text-center">
-                            <h3 class="mb-3">Linguistique</h3>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 d-flex justify-content-center">
-                      <a href="#" class="category-link">
-                        <div class="">
-                          <div class="text-center">
-                            <h3 class="mb-3">Informatique</h3>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 d-flex justify-content-center">
-                      <a href="#" class="category-link">
-                        <div class="">
-                          <div class="text-center">
-                            <h3 class="mb-3">Art</h3>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    
-                    
+                    </div>   
+                                                          	{% endfor %}
+             
                 </div>
+
             </div>
+
         </div>
         <!------form end------>
       </div>
