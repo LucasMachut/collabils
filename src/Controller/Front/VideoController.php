@@ -87,6 +87,8 @@ class VideoController extends AbstractController
     public function showItem(string $slug, VideoRepository $videoRepository): Response
     {
         $dataVideo = $videoRepository->findOneBy(['slug' => $slug]);
+        $videos = $videoRepository->findAll();
+
 
         // Si l'id contient un index qui n'existe pas
         if (is_null($dataVideo)) {
@@ -95,9 +97,10 @@ class VideoController extends AbstractController
 
         // on renvoie le template twig dans lequel on transmet les données du film demandé en paramètre
         return $this->render(
-            'front/main/video-show.html.twig',
+            'Front/video/video-item.html.twig',
             [
-                'video' => $dataVideo
+                'item' => $dataVideo,
+                'videos' => $videos
             ]
         );
     }
