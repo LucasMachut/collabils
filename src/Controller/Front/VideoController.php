@@ -73,4 +73,33 @@ class VideoController extends AbstractController
             'videos' => $videos,
         ]);
     }
+
+    /**
+     * @Route(
+     *      "/video/{slug}", 
+     *      name="video_item", 
+     *      methods={"GET"}, 
+     *      requirements={"slug"="[\w-]+"})
+     * 
+     * @param string $slug 
+     * @return Response
+     */
+    public function showItem(string $slug, VideoRepository $videoRepository): Response
+    {
+        $dataVideo = $videoRepository->findOneBy(['slug' => $slug]);
+
+        // Si l'id contient un index qui n'existe pas
+        if (is_null($dataVideo)) {
+            throw $this->createNotFoundException('Le film n\'existe pas.');
+        }
+
+        // on renvoie le template twig dans lequel on transmet les données du film demandé en paramètre
+        return $this->render(
+            'front/main/video-show.html.twig',
+            [
+                'video' => $dataVideo
+            ]
+        );
+    }
+
 }
