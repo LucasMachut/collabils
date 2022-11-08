@@ -65,12 +65,23 @@ class VideoController extends AbstractController
     /**
      * @Route("/video/chrono", name="video_list_chrono")
      */
-    public function list(VideoRepository $videoRepository): Response
+    public function listChrono(VideoRepository $videoRepository): Response
     {
         $videos = $videoRepository->findAll();
-
+        
         return $this->render('Front/video/videoChrono.html.twig', [
             'videos' => $videos,
+        ]);
+    }
+    /**
+     * @Route("/video/alpha", name="video_list_alpha")
+     */
+    public function listAlpha(VideoRepository $videoRepository): Response
+    {
+        $videoAlpha = $videoRepository->findBy([], ['title'=> 'ASC']);
+        
+        return $this->render('Front/video/videoAlpha.html.twig', [
+            'videoAlpha' => $videoAlpha,
         ]);
     }
 
